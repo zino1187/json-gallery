@@ -39,7 +39,7 @@ class Movie{
 
 		$(this.img).click(()=>{
 			//alert("저는 "+this.x+" 에  있어요"+this.src);
-			movePointer(this.x);
+			movePointer(this.x , this.src);
 		});
 	}
 }

@@ -36,6 +36,11 @@
 	background:#000;
 	float:left;
 }
+#big img{
+	width:100%;
+	height:100%;
+	object-fit:contain;/*이미지의 크기를 강제로 변환하지 않는 속성*/
+}
 .bt_wrapper{
 	width:100%;
 	height:50px;
@@ -108,11 +113,17 @@ function createPointer(){
 	pointer = new Rect($("#box"), width, height,0, 0,"yellow");
 }
 
-//포인터 움직이기!!
-function movePointer(x){
+//포인터 움직이기!!	
+function movePointer(x, src){
 	$(pointer.div).animate({
 		left:x+"px"		
 	});
+	getInfo(src);
+}
+
+//영화 정보 출력하기!!
+function getInfo(src){
+	$("#big img").attr("src", src);		
 }
 
 </script>
@@ -121,7 +132,7 @@ function movePointer(x){
 <div class="wrapper">
 	<div id="title">Hulk</div>
 	<div class="content">
-		<div id="big">큰 사진 나올곳</div>
+		<div id="big"><img></div>
 		<div id="detail">영화 설명 나올곳</div>
 	</div>
 

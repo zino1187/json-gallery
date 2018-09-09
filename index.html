@@ -3,6 +3,58 @@
 <head>
 <meta charset="UTF-8">
 <title>Document</title>
+<style>
+.wrapper{
+	width:100%;
+	height:550px;/*나중에 지울거임..*/
+	background:yellow;
+	margin:auto;
+}
+#title{
+	width:100%;
+	height:70px;
+	line-height:70px;
+	background:pink;
+	font-size:50px;
+	text-align:center;
+}
+.content{
+	width:100%;
+	height:500px;
+	background:#ccc;
+	overflow:hidden;
+}
+#big{
+	width:75%;
+	height:100%;
+	background:yellow;
+	float:left;
+}
+#detail{
+	width:25%;
+	height:100%;
+	background:#000;
+	float:left;
+}
+.bt_wrapper{
+	width:100%;
+	height:50px;
+	background:red;
+	overflow:hidden;
+}
+.bt_wrapper button:nth-child(1){
+	float:left;
+}
+.bt_wrapper button:nth-child(2){
+	float:right;
+}
+
+.box_wrapper{
+	width:100%;
+	height:80px; /*바뀔수 있음*/
+	background:#ffcc66;
+}
+</style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
 
@@ -10,10 +62,10 @@
 </head>
 <body>
 <div class="wrapper">
-	<div id="title">영화 제목 나올곳</div>
+	<div id="title">Hulk</div>
 	<div class="content">
 		<div id="big">큰 사진 나올곳</div>
-		<div>영화 설명 나올곳</div>
+		<div id="detail">영화 설명 나올곳</div>
 	</div>
 
 	<div class="bt_wrapper">

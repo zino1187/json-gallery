@@ -6,12 +6,23 @@ class Movie{
 			this. 로 멤버변수를 정의해놓는게 좋다!
 			왜?? 클래스 사용할려고 만들었기 때문에....
 		*/
+		//데이터 관련
+		this.title;
+		this.category_name;
+		this.release_year;
+		this.running_time;
+		this.budget;
+		this.gross;
+
+		//디자인 관련
 		this.container=container; //어느 태그에 붙일지..
 		this.src=src;
 		this.width=width;
 		this.height=height;
 		this.x=x;
 		this.y=y; //고정이 될 것임..
+
+
 
 		this.img=document.createElement("img");
 		$(this.img).attr("src", this.src); //이미지 경로

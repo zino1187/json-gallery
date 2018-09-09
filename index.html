@@ -115,15 +115,20 @@ function createPointer(){
 
 //포인터 움직이기!!	
 function movePointer(x, src){
+	//promise().then(function(){})은 콜백 메서드가 끝날때까지 기다려줌
 	$(pointer.div).animate({
 		left:x+"px"		
+	}).promise().then(function(){ 
+		getInfo(src);
 	});
-	getInfo(src);
 }
 
 //영화 정보 출력하기!!
 function getInfo(src){
-	$("#big img").attr("src", src);		
+	$("#big img").attr("src", src);	
+	
+	//제목 출력!!!
+	
 }
 
 </script>

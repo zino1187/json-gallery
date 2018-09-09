@@ -104,7 +104,15 @@ function createThumb(){
 	
 	//반복문으로 썸네일 생성
 	for(var i=0;i<totalRecord;i++){
-		var movie=new Movie($("#box"), movies.marvel[i].url, width, height, i*(width+(gap*2)), gap);
+		var movie=new Movie($("#box"), 
+		movies.marvel[i].url, 
+		movies.marvel[i].title, 
+		movies.marvel[i].category_name, 
+		movies.marvel[i].release_year, 
+		movies.marvel[i].running_time, 
+		movies.marvel[i].budget, 
+		movies.marvel[i].gross,
+		width, height, i*(width+(gap*2)), gap);
 	}
 }
 
@@ -114,17 +122,17 @@ function createPointer(){
 }
 
 //포인터 움직이기!!	
-function movePointer(x, src){
+function movePointer(x, src, title, category_name, release_year, running_time, budget, gross){
 	//promise().then(function(){})은 콜백 메서드가 끝날때까지 기다려줌
 	$(pointer.div).animate({
 		left:x+"px"		
 	}).promise().then(function(){ 
-		getInfo(src);
+		getInfo(src,title, category_name, release_year, running_time, budget, gross);
 	});
 }
 
 //영화 정보 출력하기!!
-function getInfo(src){
+function getInfo(src,title, category_name, release_year, running_time, budget, gross){
 	$("#big img").attr("src", src);	
 	
 	//제목 출력!!!

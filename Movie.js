@@ -1,18 +1,18 @@
 /*영화를 정의한다!!*/
 class Movie{
-	constructor(container, src, width, height, x, y){
+	constructor(container, src, title, category_name, release_year, running_time, budget, gross, width, height, x, y){
 		/*매개변수를 그냥 this가 붙는 멤버변수없이 사용할수도 있으나
 			외부에서 누군가가 이 객체의 속성들을 접근하게 하려면, 
 			this. 로 멤버변수를 정의해놓는게 좋다!
 			왜?? 클래스 사용할려고 만들었기 때문에....
 		*/
 		//데이터 관련
-		this.title;
-		this.category_name;
-		this.release_year;
-		this.running_time;
-		this.budget;
-		this.gross;
+		this.title=title;
+		this.category_name=category_name;
+		this.release_year=release_year;
+		this.running_time=running_time;
+		this.budget=budget;
+		this.gross=gross;
 
 		//디자인 관련
 		this.container=container; //어느 태그에 붙일지..
@@ -50,7 +50,7 @@ class Movie{
 
 		$(this.img).click(()=>{
 			//alert("저는 "+this.x+" 에  있어요"+this.src);
-			movePointer(this.x , this.src);
+			movePointer(this.x , this.src, this.title, this.category_name, this.release_year, this.running_time, this.budget, this.gross);
 		});
 	}
 }

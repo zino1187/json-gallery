@@ -26,5 +26,20 @@ class Movie{
 
 		//div에 부착!
 		$(this.container).append(this.img);
+
+		//클릭 이벤트 구현하기
+		//$(this.img).click(function(){
+			//익명함수내에서는 가장 가까운 {} 코드를 의미하므로,
+			//우리가 원하는 클래스영역에 접근할 수 없다..현재 여기서 this는
+			//클래스this가 아닌, this.img 인 이미지 객체를 의미함..
+			//자바스크립트의 ECMAScript 2015년 이후부터는 화살표
+			//함수가 지원되며 이런 문제를 해결해준다..
+		//	alert("나 "+this.x+" ~~ 에 있어요");
+		//});
+
+		$(this.img).click(()=>{
+			//alert("저는 "+this.x+" 에  있어요"+this.src);
+			movePointer(this.x);
+		});
 	}
 }

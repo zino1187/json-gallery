@@ -56,8 +56,32 @@
 }
 </style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="./Movie.js"></script>
+<script src="./data.json"></script>
 <script>
+var totalRecord=movies.marvel.length; //총 레코드 수
+var width=90;		//썸네일 이미지의 너비
+var height=70;	//썸네일 이미지의 높이
+var gap=5;			//썸네일 양쪽에 틈
 
+$(function(){
+	createThumb();
+});
+
+//box에 채워질 썸네일을 생성하는 함수
+function createThumb(){
+	//박스의 크기를 동적으로 지정한다. box의 크기는 레코드수에 의해
+	//결정된다...
+	$("#box").css({
+		position:"relative",
+		width:totalRecord*(width+(gap*2))+"px",
+		height:height+(gap*2)+"px",
+		background:"blue"
+	});
+	
+	//반복문으로 썸네일 생성
+	var movie=new Movie($("#box"), movies.marvel[0].url, width, height, 0, gap);
+}
 </script>
 </head>
 <body>
